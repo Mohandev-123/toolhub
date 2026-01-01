@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Loan EMI Calculator - ToolHub8</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <link href="assets/images/favicon.png" rel="icon" type="image/png" />
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <script src="assets/js/currency.js"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0891b2",
+                        "primary-hover": "#06b6d4",
+                        "background": "#f9fafb",
+                        "surface": "#ffffff",
+                        "text-main": "#111827",
+                        "text-muted": "#4b5563",
+                        "border": "#e5e7eb",
+                    },
+                    fontFamily: { "sans": ["Manrope", "sans-serif"] },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Manrope', sans-serif;
+        }
+
+        .ad-placeholder {
+            background-color: #f3f4f6;
+            border: 1px dashed #d1d5db;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #9ca3af;
+            font-weight: 500;
+            font-size: 0.875rem;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body class="bg-background text-text-main antialiased selection:bg-primary/20 selection:text-primary">
+
+    <header class="sticky top-0 z-50 w-full bg-surface border-b border-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-2 group">
+                <div
+                    class="flex items-center justify-center size-9 rounded-lg bg-primary text-white shadow-sm group-hover:scale-105 transition-transform">
+                    <span class="material-symbols-outlined text-2xl">calculate</span>
+                </div>
+                <span class="text-xl font-extrabold tracking-tight text-text-main">ToolHub8</span>
+            </a>
+
+            <nav class="hidden md:flex items-center gap-8">
+                <a href="index.html"
+                    class="text-sm font-semibold text-text-muted hover:text-primary transition-colors">Tools</a>
+                <a href="about.html"
+                    class="text-sm font-semibold text-text-muted hover:text-primary transition-colors">About</a>
+                <a href="contact.html"
+                    class="text-sm font-semibold text-text-muted hover:text-primary transition-colors">Contact</a>
+            </nav>
+
+            <button class="md:hidden p-2 text-text-main hover:bg-gray-100 rounded-lg">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+        </div>
+    </header>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="w-full h-24 ad-placeholder rounded-lg mb-8">Ad Space (728x90)</div>
+
+        <div class="flex flex-col lg:flex-row gap-8">
+            <main class="w-full lg:w-2/3">
+                <article class="bg-surface rounded-xl border border-border p-6 md:p-8 shadow-sm mb-8">
+                    <div class="flex items-center gap-3 mb-6 border-b border-border pb-6">
+                        <div class="size-12 bg-blue-50 rounded-lg flex items-center justify-center text-blue-600">
+                            <span class="material-symbols-outlined text-3xl">account_balance</span>
+                        </div>
+                        <div>
+                            <h1 class="text-2xl md:text-3xl font-bold text-text-main">Loan EMI Calculator</h1>
+                            <p class="text-text-muted text-sm">Calculate your equated monthly installment for any loan.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                        <div>
+                            <label class="block text-sm font-bold text-text-main mb-2">Loan Amount</label>
+                            <input type="number" id="loanAmount" value="500000"
+                                class="w-full rounded-lg border-gray-300 focus:border-primary focus:ring-primary">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-text-main mb-2">Interest Rate (%)</label>
+                            <input type="number" id="interestRate" value="8.5" step="0.1"
+                                class="w-full rounded-lg border-gray-300 focus:border-primary focus:ring-primary">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-text-main mb-2">Loan Tenure (Years)</label>
+                            <input type="number" id="loanTenure" value="20"
+                                class="w-full rounded-lg border-gray-300 focus:border-primary focus:ring-primary">
+                        </div>
+                    </div>
+
+                    <div class="flex justify-center mb-8">
+                        <button onclick="calculateEMI()"
+                            class="bg-primary hover:bg-primary-hover text-white font-bold py-3 px-8 rounded-lg shadow-lg hover:shadow-xl transition-all w-full md:w-auto">
+                            Calculate EMI
+                        </button>
+                    </div>
+
+                    <div id="results" class="bg-gray-50 rounded-xl p-6 border border-border hidden">
+                        <h3 class="text-lg font-bold text-text-main mb-4 border-b border-gray-200 pb-2">Results</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+                            <div class="p-4 bg-white rounded-lg shadow-sm border border-border">
+                                <p class="text-xs text-text-muted uppercase font-bold tracking-wider">Monthly EMI</p>
+                                <p class="text-2xl font-black text-primary" id="monthlyEMI">$0.00</p>
+                            </div>
+                            <div class="p-4 bg-white rounded-lg shadow-sm border border-border">
+                                <p class="text-xs text-text-muted uppercase font-bold tracking-wider">Total Interest</p>
+                                <p class="text-xl font-bold text-text-main" id="totalInterest">$0.00</p>
+                            </div>
+                            <div class="p-4 bg-white rounded-lg shadow-sm border border-border">
+                                <p class="text-xs text-text-muted uppercase font-bold tracking-wider">Total Payment</p>
+                                <p class="text-xl font-bold text-text-main" id="totalPayment">$0.00</p>
+                            </div>
+                        </div>
+                        <div class="mt-8 h-64">
+                            <canvas id="resultChart"></canvas>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog Content -->
+                <div
+                    class="prose prose-blue max-w-none bg-surface p-6 md:p-8 rounded-xl border border-border shadow-sm">
+                    <h2>Understanding Loan EMI</h2>
+                    <p>An Equated Monthly Installment (EMI) is a fixed payment amount made by a borrower to a lender at
+                        a specified date each calendar month. Equated monthly installments are used to pay off both
+                        interest and principal each month so that over a specified number of years, the loan is paid off
+                        in full.</p>
+
+                    <h3>How is EMI Calculated?</h3>
+                    <p>The mathematical formula for calculating EMI is:</p>
+                    <blockquote>EMI = [P x R x (1+R)^N]/[(1+R)^N-1]</blockquote>
+                    <p>Where:</p>
+                    <ul>
+                        <li><strong>P</strong> is the principal amount (the loan amount)</li>
+                        <li><strong>R</strong> is the rate of interest per month (annual rate divided by 12)</li>
+                        <li><strong>N</strong> is the number of monthly installments (tenure in years x 12)</li>
+                    </ul>
+
+                    <h3>Benefits of Using an EMI Calculator</h3>
+                    <p>Planning your finances before taking a loan is crucial. A Loan EMI calculator helps you:</p>
+                    <ul>
+                        <li>Determine affordability: Know exactly how much you need to pay each month.</li>
+                        <li>Plan your repayment: Adjust tenure and amount to find a comfortable EMI.</li>
+                        <li>Save on Interest: Understanding the split between principal and interest helps you plan
+                            pre-payments.</li>
+                    </ul>
+
+                    <div class="w-full h-32 ad-placeholder rounded-lg my-8">Ad Space (In-Article)</div>
+
+                    <h3>Factors Affecting Your EMI</h3>
+                    <p>Your Equated Monthly Installment depends on three major factors:</p>
+                    <ol>
+                        <li><strong>Loan Amount:</strong> Higher loan amount leads to higher EMI.</li>
+                        <li><strong>Interest Rate:</strong> A higher interest rate increases your EMI and total interest
+                            payable.</li>
+                        <li><strong>Tenure:</strong> A longer tenure reduces your monthly EMI but increases the total
+                            interest paid over the life of the loan. Conversely, a shorter tenure increases EMI but
+                            saves on total interest cost.</li>
+                    </ol>
+                </div>
+            </main>
+
+            <aside class="w-full lg:w-1/3 flex flex-col gap-8">
+                <div class="bg-surface rounded-lg border border-border p-4 shadow-sm flex justify-center">
+                    <div class="w-[300px] h-[250px] ad-placeholder rounded">Ad Space (300x250)</div>
+                </div>
+
+                <div class="bg-surface rounded-lg border border-border p-6 shadow-sm">
+                    <h3 class="font-bold text-text-main mb-4 border-b border-gray-100 pb-2">Popular Tools</h3>
+                    <ul class="space-y-3">
+                        <li><a href="compound-interest.html" class="text-text-muted hover:text-primary">Compound
+                                Interest Calculator</a></li>
+                        <li><a href="sip.html" class="text-text-muted hover:text-primary">SIP Calculator</a></li>
+                        <li><a href="credit-card.html" class="text-text-muted hover:text-primary">Credit Card EMI
+                                Calculator</a></li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <script>
+        function calculateEMI() {
+            const P = parseFloat(document.getElementById('loanAmount').value);
+            const R = parseFloat(document.getElementById('interestRate').value) / 12 / 100;
+            const N = parseFloat(document.getElementById('loanTenure').value) * 12;
+
+            const emi = (P * R * Math.pow(1 + R, N)) / (Math.pow(1 + R, N) - 1);
+            const totalPay = emi * N;
+            const totalInt = totalPay - P;
+
+            document.getElementById('monthlyEMI').innerText = formatCurrency(emi);
+            document.getElementById('totalInterest').innerText = formatCurrency(totalInt);
+            document.getElementById('totalPayment').innerText = formatCurrency(totalPay);
+
+            document.getElementById('results').classList.remove('hidden');
+
+            // Chart Logic
+            if (window.myChart) {
+                window.myChart.destroy();
+            }
+            const ctx = document.getElementById('resultChart').getContext('2d');
+            window.myChart = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Principal Amount', 'Total Interest'],
+                    datasets: [{
+                        data: [P, totalInt],
+                        backgroundColor: ['#0891b2', '#f97316'],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                usePointStyle: true,
+                                padding: 20,
+                                font: {
+                                    family: "'Manrope', sans-serif"
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+    </script>
+
+    <footer class="bg-white border-t border-border mt-12 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-text-muted">
+            <div class="flex items-center justify-center gap-2 mb-4 text-text-main">
+                <span class="material-symbols-outlined">calculate</span>
+                <span class="font-bold text-lg">ToolHub8</span>
+            </div>
+            <div class="flex justify-center gap-6 mb-8 text-sm font-medium">
+                <a href="index.html" class="hover:text-primary transition-colors">Home</a>
+                <a href="about.html" class="hover:text-primary transition-colors">About</a>
+                <a href="privacy.html" class="hover:text-primary transition-colors">Privacy Policy</a>
+                <a href="terms.html" class="hover:text-primary transition-colors">Terms of Service</a>
+                <a href="contact.html" class="hover:text-primary transition-colors">Contact</a>
+            </div>
+            <p class="text-xs text-gray-400">© 2025 ToolHub8. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

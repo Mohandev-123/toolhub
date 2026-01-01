@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>ToolHub8 - Financial Tools & Resources</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+
+    <!-- Tailwind CSS -->
+    <link href="assets/images/favicon.png" rel="icon" type="image/png" />
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+
+    <!-- Theme Config -->
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0891b2", /* Cyan-600 - More readable/professional */
+                        "primary-hover": "#06b6d4",
+                        "background": "#f9fafb", /* Gray-50 */
+                        "surface": "#ffffff",
+                        "text-main": "#111827", /* Gray-900 */
+                        "text-muted": "#4b5563", /* Gray-600 */
+                        "border": "#e5e7eb", /* Gray-200 */
+                    },
+                    fontFamily: {
+                        "sans": ["Manrope", "sans-serif"],
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Manrope', sans-serif;
+        }
+
+        .ad-placeholder {
+            background-color: #f3f4f6;
+            border: 1px dashed #d1d5db;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #9ca3af;
+            font-weight: 500;
+            font-size: 0.875rem;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body class="bg-background text-text-main antialiased selection:bg-primary/20 selection:text-primary">
+
+    <!-- Header -->
+    <header class="sticky top-0 z-50 w-full bg-surface border-b border-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="/" class="flex items-center gap-2 group">
+                <div
+                    class="flex items-center justify-center size-9 rounded-lg bg-primary text-white shadow-sm group-hover:scale-105 transition-transform">
+                    <span class="material-symbols-outlined text-2xl">calculate</span>
+                </div>
+                <span class="text-xl font-extrabold tracking-tight text-text-main">ToolHub8</span>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center gap-8">
+                <a href="index.html"
+                    class="text-sm font-semibold text-text-muted hover:text-primary transition-colors">Tools</a>
+                <a href="about.html"
+                    class="text-sm font-semibold text-text-muted hover:text-primary transition-colors">About</a>
+                <a href="contact.html"
+                    class="text-sm font-semibold text-text-muted hover:text-primary transition-colors">Contact</a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden p-2 text-text-main hover:bg-gray-100 rounded-lg">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+        <!-- Top Ad Leaderboard -->
+        <div class="w-full h-24 ad-placeholder rounded-lg mb-8">
+            Ad Space (728x90)
+        </div>
+
+        <div class="flex flex-col lg:flex-row gap-8">
+
+            <!-- Main Content (Left Column) -->
+            <main class="w-full lg:w-2/3">
+
+                <h3 class="text-xl font-bold text-text-main mb-6 flex items-center gap-2">
+                    <span class="material-symbols-outlined text-primary">apps</span>
+                    Financial Calculators
+                </h3>
+
+                <!-- Grid Layout -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Tool 1: Loan EMI -->
+                    <article
+                        class="bg-surface rounded-lg border border-border p-5 hover:border-primary/50 transition-colors group cursor-pointer h-full flex flex-col">
+                        <div
+                            class="size-12 bg-blue-50 rounded-lg flex items-center justify-center text-blue-600 mb-4 group-hover:scale-110 transition-transform">
+                            <span class="material-symbols-outlined text-2xl">account_balance</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-text-main mb-2 group-hover:text-primary transition-colors">
+                            Loan EMI Calculator</h4>
+                        <p class="text-sm text-text-muted mb-4 flex-grow">Calculate your monthly EMI for home, personal,
+                            or car loans.</p>
+                        <a href="loan-emi.html"
+                            class="inline-flex items-center justify-center px-4 py-2 bg-text-main text-white text-sm font-medium rounded hover:bg-black transition-colors">
+                            Use Tool
+                        </a>
+                    </article>
+
+                    <!-- Tool 2: Compound Interest -->
+                    <article
+                        class="bg-surface rounded-lg border border-border p-5 hover:border-primary/50 transition-colors group cursor-pointer h-full flex flex-col">
+                        <div
+                            class="size-12 bg-green-50 rounded-lg flex items-center justify-center text-green-600 mb-4 group-hover:scale-110 transition-transform">
+                            <span class="material-symbols-outlined text-2xl">trending_up</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-text-main mb-2 group-hover:text-primary transition-colors">
+                            Compound Interest</h4>
+                        <p class="text-sm text-text-muted mb-4 flex-grow">See the magic of compounding on your
+                            investments over time.</p>
+                        <a href="compound-interest.html"
+                            class="inline-flex items-center justify-center px-4 py-2 bg-text-main text-white text-sm font-medium rounded hover:bg-black transition-colors">
+                            Use Tool
+                        </a>
+                    </article>
+
+                    <!-- Tool 3: SIP Calculator -->
+                    <article
+                        class="bg-surface rounded-lg border border-border p-5 hover:border-primary/50 transition-colors group cursor-pointer h-full flex flex-col">
+                        <div
+                            class="size-12 bg-purple-50 rounded-lg flex items-center justify-center text-purple-600 mb-4 group-hover:scale-110 transition-transform">
+                            <span class="material-symbols-outlined text-2xl">savings</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-text-main mb-2 group-hover:text-primary transition-colors">SIP
+                            Calculator</h4>
+                        <p class="text-sm text-text-muted mb-4 flex-grow">Estimate returns on your Systematic Investment
+                            Plan.</p>
+                        <a href="sip.html"
+                            class="inline-flex items-center justify-center px-4 py-2 bg-text-main text-white text-sm font-medium rounded hover:bg-black transition-colors">
+                            Use Tool
+                        </a>
+                    </article>
+
+                    <!-- Tool 4: Credit Card EMI -->
+                    <article
+                        class="bg-surface rounded-lg border border-border p-5 hover:border-primary/50 transition-colors group cursor-pointer h-full flex flex-col">
+                        <div
+                            class="size-12 bg-red-50 rounded-lg flex items-center justify-center text-red-600 mb-4 group-hover:scale-110 transition-transform">
+                            <span class="material-symbols-outlined text-2xl">credit_card</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-text-main mb-2 group-hover:text-primary transition-colors">
+                            Credit Card EMI</h4>
+                        <p class="text-sm text-text-muted mb-4 flex-grow">Convert credit card bills to EMI and check
+                            interest costs.</p>
+                        <a href="credit-card.html"
+                            class="inline-flex items-center justify-center px-4 py-2 bg-text-main text-white text-sm font-medium rounded hover:bg-black transition-colors">
+                            Use Tool
+                        </a>
+                    </article>
+
+                    <!-- Tool 5: Salary Tax -->
+                    <article
+                        class="bg-surface rounded-lg border border-border p-5 hover:border-primary/50 transition-colors group cursor-pointer h-full flex flex-col">
+                        <div
+                            class="size-12 bg-orange-50 rounded-lg flex items-center justify-center text-orange-600 mb-4 group-hover:scale-110 transition-transform">
+                            <span class="material-symbols-outlined text-2xl">receipt_long</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-text-main mb-2 group-hover:text-primary transition-colors">
+                            Salary Tax Calculator</h4>
+                        <p class="text-sm text-text-muted mb-4 flex-grow">Calculate income tax under Old vs New Regime.
+                        </p>
+                        <a href="salary-tax.html"
+                            class="inline-flex items-center justify-center px-4 py-2 bg-text-main text-white text-sm font-medium rounded hover:bg-black transition-colors">
+                            Use Tool
+                        </a>
+                    </article>
+
+                    <!-- Tool 6: Crypto Profit -->
+                    <article
+                        class="bg-surface rounded-lg border border-border p-5 hover:border-primary/50 transition-colors group cursor-pointer h-full flex flex-col">
+                        <div
+                            class="size-12 bg-yellow-50 rounded-lg flex items-center justify-center text-yellow-600 mb-4 group-hover:scale-110 transition-transform">
+                            <span class="material-symbols-outlined text-2xl">currency_bitcoin</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-text-main mb-2 group-hover:text-primary transition-colors">
+                            Crypto Profit Calculator</h4>
+                        <p class="text-sm text-text-muted mb-4 flex-grow">Calculate profit/loss on cryptocurrency
+                            trades.</p>
+                        <a href="crypto.html"
+                            class="inline-flex items-center justify-center px-4 py-2 bg-text-main text-white text-sm font-medium rounded hover:bg-black transition-colors">
+                            Use Tool
+                        </a>
+                    </article>
+                </div>
+
+                <div class="w-full h-32 ad-placeholder rounded-lg my-8">
+                    Ad Space (In-Article / In-Feed)
+                </div>
+
+                <!-- Website Introduction / Blog Content -->
+                <article class="bg-surface rounded-xl border border-border p-6 md:p-8 shadow-sm">
+                    <h2 class="text-2xl md:text-3xl font-bold text-text-main mb-4">Welcome to ToolHub8: Simplifying Your
+                        Financial Journey</h2>
+                    <div class="prose prose-blue max-w-none text-text-muted">
+                        <p class="mb-4">
+                            In today's fast-paced financial world, making informed decisions is more critical than ever.
+                            Whether you're planning to buy a dream home, investing for retirement, or trying to
+                            understand your tax liabilities, <strong>ToolHub8</strong> is designed to be your one-stop
+                            destination for accurate, free, and easy-to-use financial calculators.
+                        </p>
+
+                        <h3 class="text-xl font-bold text-text-main mt-6 mb-3">Why Use Financial Calculators?</h3>
+                        <p class="mb-4">
+                            Financial planning often involves complex formulas and projections that can be overwhelming.
+                            ToolHub8 simplifies this process by providing intuitive tools that do the heavy lifting for
+                            you.
+                        </p>
+                        <ul class="list-disc pl-5 mb-4 space-y-2">
+                            <li><strong>Accuracy:</strong> Eliminate manual errors with our precise algorithms.</li>
+                            <li><strong>Scenario Planning:</strong> Instantly see how changing interest rates or tenures
+                                affects your payments.</li>
+                            <li><strong>Time-Saving:</strong> Get results in seconds rather than hours of spreadsheet
+                                work.</li>
+                        </ul>
+
+                        <h3 class="text-xl font-bold text-text-main mt-6 mb-3">Our Core Tools Explained</h3>
+
+                        <h4 class="font-bold text-text-main mt-4 mb-2">1. Smart Borrowing</h4>
+                        <p class="mb-4">
+                            Debt can be a useful tool if managed correctly. Our <strong>Loan EMI Calculator</strong> and
+                            <strong>Credit Card EMI Calculator</strong> help you understand the true cost of borrowing,
+                            ensuring you never take on more than you can handle.
+                        </p>
+
+                        <h4 class="font-bold text-text-main mt-4 mb-2">2. Wealth Creation</h4>
+                        <p class="mb-4">
+                            The secret to wealth is time and consistency. Use the <strong>SIP Calculator</strong> to
+                            plan your mutual fund investments and the <strong>Compound Interest Calculator</strong> to
+                            visualize how small contributions grow into massive sums over time.
+                        </p>
+
+                        <h4 class="font-bold text-text-main mt-4 mb-2">3. Modern Finance</h4>
+                        <p class="mb-4">
+                            From the traditional <strong>Salary Tax Calculator</strong> to the modern <strong>Crypto
+                                Profit Calculator</strong>, we cover the full spectrum of your financial life. We stay
+                            updated with the latest regimes and market trends to give you relevant insights.
+                        </p>
+
+                        <div class="bg-blue-50 border-l-4 border-primary p-4 my-6">
+                            <p class="text-sm text-blue-800">
+                                <strong>Pro Tip:</strong> Bookmark this page and use these tools quarterly to review
+                                your financial health. Consistency is key to achieving financial freedom!
+                            </p>
+                        </div>
+
+                        <p>
+                            ToolHub8 is committed to providing free, high-quality financial education and tools for
+                            everyone. Explore our calculators above and take the first step towards mastering your money
+                            today.
+                        </p>
+                    </div>
+                </article>
+
+            </main>
+
+            <!-- Sidebar (Right Column) -->
+            <aside class="w-full lg:w-1/3 flex flex-col gap-8">
+
+                <!-- Search Widget -->
+                <div class="bg-surface rounded-lg border border-border p-6 shadow-sm">
+                    <h3 class="font-bold text-text-main mb-4">Search Tools</h3>
+                    <div class="relative">
+                        <span class="material-symbols-outlined absolute left-3 top-2.5 text-gray-400">search</span>
+                        <input type="text" placeholder="Type to search..."
+                            class="w-full pl-10 pr-4 py-2 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary/50 focus:border-primary outline-none transition-all">
+                    </div>
+                </div>
+
+                <!-- Sidebar Ad Placeholder -->
+                <div class="bg-surface rounded-lg border border-border p-4 shadow-sm flex justify-center">
+                    <div class="w-[300px] h-[250px] ad-placeholder rounded">
+                        Ad Space (300x250)
+                    </div>
+                </div>
+
+                <!-- Categories Widget -->
+                <div class="bg-surface rounded-lg border border-border p-6 shadow-sm">
+                    <h3 class="font-bold text-text-main mb-4 border-b border-gray-100 pb-2">Tool Categories</h3>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="#"
+                                class="flex justify-between items-center text-text-muted hover:text-primary transition-colors group">
+                                <span>Loans & EMI</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="flex justify-between items-center text-text-muted hover:text-primary transition-colors group">
+                                <span>Investment (SIP/Compound)</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="flex justify-between items-center text-text-muted hover:text-primary transition-colors group">
+                                <span>Income Tax</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="flex justify-between items-center text-text-muted hover:text-primary transition-colors group">
+                                <span>Cryptocurrency</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter Widget -->
+                <div class="bg-primary/5 rounded-lg border border-primary/20 p-6">
+                    <h3 class="font-bold text-text-main mb-2">Weekly Tips</h3>
+                    <p class="text-sm text-text-muted mb-4">Join 10k+ subscribers getting smart financial advice.</p>
+                    <input type="email" placeholder="Your email"
+                        class="w-full px-3 py-2 bg-white border border-gray-200 rounded mb-2 text-sm focus:outline-none focus:border-primary">
+                    <button
+                        class="w-full bg-text-main text-white font-bold py-2 rounded text-sm hover:bg-black transition-colors">Subscribe</button>
+                </div>
+
+            </aside>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-border mt-12 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-text-muted">
+            <div class="flex items-center justify-center gap-2 mb-4 text-text-main">
+                <span class="material-symbols-outlined">calculate</span>
+                <span class="font-bold text-lg">ToolHub8</span>
+            </div>
+            <div class="flex justify-center gap-6 mb-8 text-sm font-medium">
+                <a href="index.html" class="hover:text-primary transition-colors">Home</a>
+                <a href="about.html" class="hover:text-primary transition-colors">About</a>
+                <a href="privacy.html" class="hover:text-primary transition-colors">Privacy Policy</a>
+                <a href="terms.html" class="hover:text-primary transition-colors">Terms of Service</a>
+                <a href="contact.html" class="hover:text-primary transition-colors">Contact</a>
+            </div>
+            <p class="text-xs text-gray-400">© 2025 ToolHub8. All rights reserved. Financial figures are estimates for
+                informational purposes only.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
